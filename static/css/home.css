@@ -1,0 +1,23 @@
+header{
+    background: url('/static/img/wave.svg') no-repeat bottom left /cover, url('/static/img/header.png')   no-repeat center /cover ;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+    padding-bottom: 30vh; 
+}
+header img{
+    width: 250px;
+}
+section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    box-sizing: border-box;
+}
