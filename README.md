@@ -14,6 +14,19 @@ De tal manera que pueda PIP (manejador de paquetes de python) instalar todas las
 
 ## Iniciar proyecto
 
+Primero habria que ejecutar esto en la consola para que generar la base de datos.
+
+```shell
+   > python manage.py makemigrations
+```
+
+Y luego el siguiente:
+
+```shell
+   > python manage.py migrate
+```
+
+
 Para iniciar el proyecto correr los siguientes comandos en dos consolas distintas
 
 Para correr que los cambios realizados en código se refresquen en tiempo real.
