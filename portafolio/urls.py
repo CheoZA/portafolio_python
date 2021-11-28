@@ -19,5 +19,6 @@ from home import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('cv/', views.get_curriculum),
     path('', views.home, name='home')
 ]
