@@ -22,7 +22,7 @@ class Proyecto(models.Model):
 class ProyectoImagen(models.Model):
     proyecto_imagen_id = models.AutoField(primary_key=True)
     titulo = models.CharField(max_length=250, blank=True)
-    imagen = models.ImageField(upload_to='images/')
-    proyecto = models.ForeignKey(Proyecto, on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to='static/upload/images/')
+    proyecto = models.ForeignKey(Proyecto, on_delete=models.CASCADE, related_name="proyectoImagen")
     def __str__(self) -> str:
         return self.titulo
