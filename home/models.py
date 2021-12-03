@@ -4,7 +4,7 @@ class Persona(models.Model):
     nombre = models.CharField(max_length=50, null=False, primary_key=True)
     apellido = models.CharField(max_length=50, null=False)
     fecha_de_nacimiento = models.DateField(null=False)
-    
+    imagen = models.ImageField(upload_to='static/upload/profile_image/')
     def save(self, *args, **kwargs):
         if len(Persona.objects.all()) == 0:
             return super(Persona, self).save(*args, **kwargs)
