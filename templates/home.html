@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE>
 <html>
+
 <head>
     <title>Portafolio de {{ persona.nombre }}</title>
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
@@ -9,8 +10,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
+    {% if user.is_authenticated %}
+    <button class="botonAgregar">
+        <i class="fas fa-plus"></i>
+    </button>
+    {% endif %}
     <header>
         <div class="headerContainer">
             <img src="{{persona.imagen}}" />
@@ -18,23 +28,44 @@
             <h2>{{ persona.apellido }}</h2>
         </div>
 
+        {% if user.is_authenticated %}
+        <button class="botonEditar">
+            <i class="fas fa-edit"></i>
+        </button>
+        {% endif %}
     </header>
-    {% comment %} <section>
-        a
-    </section> {% endcomment %}
     {% for proyecto in proyectos %}
     <section>
-        <div class="left">
-            <h1>{{proyecto.titulo}}</h1>
-            <p>{{proyecto.descripcion}}</p>
-        </div>
-        <div class="right">
-            {% for proyectoImagen in proyecto.proyectoImagen.all %}
-            <img src="{{proyectoImagen.imagen}}" title="{{proyectoImagen.titulo}}" />
-            {% endfor %}
-        </div>
+        {% if user.is_authenticated %}
+        <button class="botonEditar">
+            <i class="fas fa-edit"></i>
+        </button>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <button class="botonEliminar">
+            <i class="fas fa-trash-alt"></i>
+        </button>
+        {% endif %}
+        <div class="container">
+            <div class="top">
+                <h1>{{proyecto.titulo}}</h1>
+                <p>{{proyecto.descripcion}}</p>
+                <div class="referencias">
+                    {% if proyecto.link_en_vivo is not None and proyecto.link_en_vivo != '' %}
+                    <a href="{{proyecto.link_en_vivo}}" target="__blank">Ver en vivo</a>
+                    {% endif %}
+                    {% if proyecto.link_en_codigo is not None and proyecto.link_en_codigo != '' %}
+                    <a href="{{proyecto.link_en_codigo}}" target="__blank">Ver repositorio</a>
+                    {% endif %}
+                </div>
 
-
+            </div>
+            <div class="bottom">
+                {% for proyectoImagen in proyecto.proyectoImagen.all %}
+                <img src="{{proyectoImagen.imagen}}" title="{{proyectoImagen.titulo}}" />
+                {% endfor %}
+            </div>
+        </div>
     </section>
     {% endfor %}
 </body>

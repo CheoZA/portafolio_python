@@ -19,6 +19,7 @@ header{
     justify-content: flex-end;
     align-items: center;
     box-sizing: border-box;
+    position: relative;
 }
 .headerContainer{
     background: #0000008f;
@@ -60,29 +61,110 @@ section{
     justify-content:center;
     align-items: center;
     box-sizing: border-box;
+    position: relative;
 }
 
 section:nth-child(2n - 1){
     background: #f2f2f2;
 }
 
-section .right, section .left{
-    width: 100%;
+section .container{
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-section .right img{
-    width: 50%;
+section .top, section .bottom{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-section .left{
+section .top .referencias{
+
+    display: flex;
+}
+section .top .referencias a{
+    text-decoration: none;
+    background: #0063F7;
+    padding: 15px;
+    border-radius: 15px;
+    color: white;
+    font-size: 15px;
+    margin: 10px;
+}
+
+section .bottom img{
+    width: 100%;
+    max-width: 800px;
+}
+
+section .bottom{
     padding: 20px;
     box-sizing: border-box;
 }
 
-section .left h1{
+section .top h1{
     color: black;
     font-size: 50px;
+}
+
+.botonEditar{
+    position: absolute;
+    right: 30;
+    top: 30;
+    z-index: 20;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #0063F7;
+    border:0px;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+    transition: all 0.5s;
+}
+.botonEditar:hover{
+    box-shadow: 0px 0px 10px #4d94ff;
+}
+
+.botonEliminar{
+    position: absolute;
+    right: 30;
+    top: 140;
+    z-index: 20;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: red;
+    border:0px;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+    transition: all 0.5s;
+}
+.botonEliminar:hover{
+    box-shadow: 0px 0px 10px red;
+}
+
+.botonAgregar{
+    position: fixed;
+    left: 30;
+    top: 30;
+    z-index: 20;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: green;
+    border:0px;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+    transition: all 0.5s;
+}
+.botonAgregar:hover{
+    box-shadow: 0px 0px 10px green;
 }
