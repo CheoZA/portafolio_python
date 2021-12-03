@@ -27,15 +27,8 @@ Y luego el siguiente:
 ```
 
 
-Para iniciar el proyecto correr los siguientes comandos en dos consolas distintas
+Para iniciar el proyecto correr el siguiente comando
 
-Para correr que los cambios realizados en código se refresquen en tiempo real.
-
-```shell
-   > python manage.py livereload
-```
-
-Para desplegar el servidor de aplicaciones.
 
 ```shell
    > python manage.py runserver localhost:80
