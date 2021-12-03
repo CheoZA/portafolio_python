@@ -168,3 +168,66 @@ section .top h1{
 .botonAgregar:hover{
     box-shadow: 0px 0px 10px green;
 }
+
+/*propiedades para el fab*/
+
+.fab-container {
+	position: fixed;
+	top: 30px;
+	left: 30px;
+	/* right: 50px; */
+	z-index: 999;
+	cursor: pointer;
+}
+
+.fab-icon-holder {
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	background: #2e7d32;
+	box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.fab-icon-holder:hover{
+	opacity: 0.8;
+}
+
+.fab-icon-holder i {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 100%;
+	font-size: 25px;
+	color: #ffffff;
+}
+
+.fab {
+	width: 60px;
+	height: 60px;
+	background: #0063F7;
+}
+
+.fab-options {
+	transform-origin: 85% l;
+	list-style-type: none;
+	margin: 0;
+	position: absolute;
+	top: 70px;
+	right: 0px;
+	opacity: 0;
+	transition: all 0.3s ease;
+	transform-origin: 85% top;
+}
+
+.fab:hover + .fab-options, .fab-options:hover {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.fab-options li {
+	display: flex;
+	justify-content: flex-start;
+	padding: 5px;
+	flex-direction: row;
+}

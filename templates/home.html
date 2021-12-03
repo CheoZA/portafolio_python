@@ -17,9 +17,23 @@
 
 <body>
     {% if user.is_authenticated %}
-    <button class="botonAgregar">
-        <i class="fas fa-plus"></i>
-    </button>
+    <div class="fab-container">
+		<div class="fab fab-icon-holder">
+			<i class="fas fa-plus"></i>
+		</div>
+		<ul class="fab-options">
+			<li>
+				<div class="fab-icon-holder">
+					<i class="fas fa-plus" title="Alta manual"></i>
+				</div>
+			</li>
+			<li>
+				<div class="fab-icon-holder">
+					<i class="fas fa-arrow-circle-up" title="Subir archivo"></i>
+				</div>
+			</li>
+		</ul>
+	</div>
     {% endif %}
     <header>
         <div class="headerContainer">
